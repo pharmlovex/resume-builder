@@ -1,0 +1,158 @@
+/* Resume Preview Styling */
+.resume-preview-card {
+  background-color: white;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden; /* Ensure content doesn't overflow the card */
+}
+
+.resume-content {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  line-height: 1.6;
+  color: #333;
+  word-wrap: break-word; /* Ensure long words break and wrap */
+  overflow-wrap: break-word; /* Modern version of word-wrap */
+  hyphens: auto; /* Add hyphens where appropriate */
+}
+
+/* Make sure all elements inside the resume content respect container width */
+.resume-content * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure code blocks and pre elements don't overflow */
+.resume-content pre,
+.resume-content code {
+  white-space: pre-wrap; /* Allow wrapping in code blocks */
+  word-break: break-word;
+  overflow-x: auto; /* Add horizontal scrolling only if needed */
+}
+
+/* Ensure tables don't overflow */
+.resume-content table {
+  width: 100%;
+  table-layout: fixed; /* Fixed table layout helps with width control */
+  overflow-x: auto; /* Add horizontal scrolling for tables if needed */
+  display: block; /* Makes overflow-x work properly */
+}
+
+/* Ensure images don't overflow */
+.resume-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure links don't overflow */
+.resume-content a {
+  word-break: break-all; /* Break long URLs */
+}
+
+/* Header styling */
+.resume-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+  word-break: break-word; /* Allow breaking of long names */
+}
+
+.resume-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #2563eb;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.25rem;
+}
+
+.resume-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+/* Contact info styling */
+.resume-content p:first-of-type {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* List styling */
+.resume-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.resume-content li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.resume-content li::before {
+  content: "•";
+  position: absolute;
+  left: -1.25rem;
+  color: #2563eb;
+}
+
+/* Bold and emphasis */
+.resume-content strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.resume-content em {
+  font-style: italic;
+  color: #4b5563;
+}
+
+/* Links */
+.resume-content a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.resume-content a:hover {
+  text-decoration: underline;
+}
+
+/* Date ranges and job titles */
+.resume-content h3 + p {
+  margin-top: -0.25rem;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* Print styles */
+@media print {
+  .resume-content {
+    font-size: 12pt;
+  }
+
+  .resume-content h1 {
+    font-size: 18pt;
+  }
+
+  .resume-content h2 {
+    font-size: 16pt;
+    color: #000;
+    border-bottom-color: #000;
+  }
+
+  .resume-content h3 {
+    font-size: 14pt;
+    color: #000;
+  }
+
+  .resume-content a {
+    color: #000;
+    text-decoration: none;
+  }
+}
